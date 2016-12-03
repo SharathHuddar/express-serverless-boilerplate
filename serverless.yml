@@ -22,3 +22,21 @@ functions:
          path: users
          method: get
          integration: lambda-proxy
+
+resources:
+  Resources:
+    goChatUsersTable:
+      Type: 'AWS::DynamoDB::Table'
+      Properties:
+        AttributeDefinitions:
+          -
+            AttributeName: username
+            AttributeType: S
+        KeySchema:
+          -
+            AttributeName: username
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
+        TableName: 'usersExpressServerlessBoilerplate'
