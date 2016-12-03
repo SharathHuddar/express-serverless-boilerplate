@@ -4,7 +4,7 @@
   "description": "A boilerplate for using expressjs with serverless framework",
   "main": "lambda.js",
   "scripts": {
-    "start": "export NODE_ENV='development' && node ./bin/www",
+    "start": "export NODE_ENV='development' && nodemon ./bin/www",
     "generate-proxy": "claudia generate-serverless-express-proxy --express-module app",
     "deploy": "sls deploy"
   },
